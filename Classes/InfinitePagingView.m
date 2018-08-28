@@ -46,6 +46,9 @@
         _innerScrollView.scrollEnabled = YES;
         _innerScrollView.showsHorizontalScrollIndicator = NO;
         _innerScrollView.showsVerticalScrollIndicator = NO;
+        if(@available(iOS 11, *)) {
+            _innerScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
         _scrollDirection = InfinitePagingViewHorizonScrollDirection;
         [self addSubview:_innerScrollView];
         self.pageSize = frame.size;
